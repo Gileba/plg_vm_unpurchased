@@ -8,6 +8,6 @@
  
 		function __construct() {
 			parent::__construct();
-			$this->addViewPath(JPATH_PLUGINS . DS . 'vmextended' . DS . 'taxreport' . DS . 'views');
+			$this->addViewPath(JPATH_PLUGINS . DS . 'vmextended' . DS . 'unpurchased' . DS . 'views');
 		}
 	}

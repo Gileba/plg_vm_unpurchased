@@ -14,8 +14,8 @@
 		public function onVmAdminController ($controller) {
 			if ($controller = $this->getName()) {
 				VmModel::addIncludePath($this->_path . DS . 'models');
-				require_once($this->_path . DS . 'models' . DS . 'taxreport.php');
-				require_once($this->_path . DS . 'controllers' . DS . 'taxreport.php');
+				require_once($this->_path . DS . 'models' . DS . 'unpurchased.php');
+				require_once($this->_path . DS . 'controllers' . DS . 'unpurchased.php');
 				return true;
 			}
 		}
