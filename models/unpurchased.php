@@ -51,15 +51,15 @@
 			$subquery 
 				->select('io.virtuemart_product_id', 'io.order_item_name', 'io.created_on')
 				->from('#__virtuemart_order_items', 'io')
-				->where('p.created_on' > $this->from_period AND 'p.virtuemart_product_id' = 'io.virtuemart_product_id');
+				->where($db->quoteName('p.created_on') . ' > ' . $this->from_period . ' AND ' . $db->quotename('p.virtuemart_product_id') . ' = ' . $db->quoteName('io.virtuemart_product_id'));
 			
 			$query
 				->select($db->quoteName(array('p.virtuemart_product_id', 'p.product_sku')))
 				->from($db->quoteName('#__virtuemart_products', 'p'))
-				->where($db->quoteName('p.published') . ' = ' . true
+				->where($db->quoteName('p.published') . ' = ' . true)
 				->where(' NOT EXISTS (' . $subquery . ')')
-				->group($db->quoteName('p.virtuemart_product_id')
-				->order($db->quoteName('p.virtuemart_product_id' . ' ASC');
+				->group($db->quoteName('p.virtuemart_product_id'))
+				->order($db->quoteName('p.virtuemart_product_id' . ' ASC'));
 
 			// Set the query using our newly populated query object and execute it.
 			$db->setQuery($query);			
@@ -72,7 +72,7 @@
 			{
 				JFactory::getApplication()->enqueueMessage($e->getMessage());
 			}
-		
+			
 			return $db->loadObject();
 		}
 	}
