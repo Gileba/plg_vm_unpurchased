@@ -16,7 +16,6 @@
 		}
 
 		function display($tpl = null){
- 
 			if (!class_exists('VmHTML')) require(VMPATH_ADMIN . DS . 'helpers' . DS . 'html.php');
  
 			vRequest::setvar('task','');
@@ -26,7 +25,7 @@
 			$this->addStandardDefaultViewLists($model);
  
 			$unpurchasedData = $model->getUnpurchasedProducts();
-			$this->assignRef('report', $unpruchasedData);
+			$this->assignRef('report', $unpurchasedData);
  
 			$this->pagination = $model->getPagination();
  

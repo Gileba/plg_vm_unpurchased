@@ -48,31 +48,16 @@
 			$query = $db->getQuery(true);
 			$subquery = $db->getQuery(true);
 			
-			$subquery 
-				->select('io.virtuemart_product_id', 'io.order_item_name', 'io.created_on')
-				->from('#__virtuemart_order_items', 'io')
-				->where($db->quoteName('p.created_on') . ' > ' . $this->from_period . ' AND ' . $db->quotename('p.virtuemart_product_id') . ' = ' . $db->quoteName('io.virtuemart_product_id'));
+			$select = array();
+			$select[] = "`p`.`virtuemart_product_id` AS `product_id`";
+			$select[] = "`p`.`product_sku` AS `sku`";
+			$selectString = join(', ', $select) . ' FROM `#__virtuemart_products` AS `p`';
+						
+			$whereString = 'WHERE `p`.`published` = true AND NOT EXISTS ( SELECT `io`.`virtuemart_product_id`, `io`.`order_item_name`, `io`.`created_on` FROM #__virtuemart_order_items AS `io` WHERE `io`.`created_on` > "' . $this->from_period . '" AND `p`.`virtuemart_product_id` = `io`.`virtuemart_product_id` )';
 			
-			$query
-				->select($db->quoteName(array('p.virtuemart_product_id', 'p.product_sku')))
-				->from($db->quoteName('#__virtuemart_products', 'p'))
-				->where($db->quoteName('p.published') . ' = ' . true)
-				->where(' NOT EXISTS (' . $subquery . ')')
-				->group($db->quoteName('p.virtuemart_product_id'))
-				->order($db->quoteName('p.virtuemart_product_id' . ' ASC'));
+			$groupBy = 'GROUP BY `p`.`virtuemart_product_id`';
+			$orderBy = 'ORDER BY `p`.`virtuemart_product_id` ASC';
 
-			// Set the query using our newly populated query object and execute it.
-			$db->setQuery($query);			
-			
-			try
-			{
-				$db->execute();
-			}
-			catch (Exception $e) 
-			{
-				JFactory::getApplication()->enqueueMessage($e->getMessage());
-			}
-			
-			return $db->loadObject();
+			return $this->exeSortSearchListQuery (1, $selectString, '', $whereString, $groupBy, $orderBy);
 		}
 	}

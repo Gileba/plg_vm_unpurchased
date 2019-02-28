@@ -18,8 +18,8 @@
       <table class="adminlist table table-striped" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
-                    <th><?php echo $this->sort('p.virtuemart_product_id', 'VMEXT_UNPURCHASED_PRODUCTID') ; ?></th>
-                    <th><?php echo $this->sort('p.product_sku', 'VMEXT_UNPURCHASED_SKU') ; ?></th>
+                    <th><?php echo $this->sort('`product_id`', 'VMEXT_UNPURCHASED_PRODUCTID') ; ?></th>
+                    <th><?php echo $this->sort('`sku`', 'VMEXT_UNPURCHASED_SKU') ; ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -28,8 +28,8 @@
 					foreach ($this->report as $r) { 	
 				?>
                 <tr class="row<?php echo $i;?>">
-                    <td align="center"><?php echo $r['p.virtuemart_product_id']; ?></td>
-                    <td align="center"><?php echo $r['p.product_sku']; ?></td>
+                    <td align="center"><a href="http://msd.gileba.be/administrator/index.php?option=com_virtuemart&view=product&task=edit&virtuemart_product_id=<?php echo $r['product_id']; ?>"><?php echo $r['product_id']; ?></a></td>
+                    <td align="center"><?php echo $r['sku']; ?></td>
                 </tr>
                 <?php 
                 		$i = 1-$i; 
