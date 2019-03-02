@@ -40,4 +40,10 @@
         <param type="vmjpluginwarning" />
     </params>
 
+	<updateservers>
+		<server
+			type="extension"
+			priority="1"
+			name="Gileba Update Server">http://www.gileba.be/updates/plg_vm_unpurchased_updates.xml</server>
+	</updateservers>
 </extension>
