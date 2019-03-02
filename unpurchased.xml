@@ -8,10 +8,6 @@
     <copyright>Copyright (C) 2019 Gijs Lamon. All rights reserved.</copyright>
     <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3</license>
     <version>0.1</version>
-    <releaseDate>2019-02-27</releaseDate>
-    <releaseType>Initial Release</releaseType>
-    <downloadUrl>http://www.gileba.be</downloadUrl>
-
     <description>VMEXT_UNPURCHASED_DESC</description>
 
     <files>
