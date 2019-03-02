@@ -30,24 +30,9 @@
 		}
  
 		function getUnpurchasedProducts() {
-			$user = JFactory::getUser();
-			if($user->authorise('core.admin', 'com_virtuemart') or $user->authorise('core.manager', 'com_virtuemart'))
-			{
-				$vendorId = vRequest::getInt('virtuemart_vendor_id');
-			} else {
-				$vendorId = VmConfig::isSuperVendor();
-			}
-		
 			// $this->setPeriod();
 			$this->from_period = ('2017-01-01 00:00:00');
 		 
-			// Get a db connection.
-			$db = JFactory::getDbo();
- 
-			// Create a new query object.
-			$query = $db->getQuery(true);
-			$subquery = $db->getQuery(true);
-			
 			$select = array();
 			$select[] = "`p`.`virtuemart_product_id` AS `product_id`";
 			$select[] = "`p`.`product_sku` AS `sku`";
