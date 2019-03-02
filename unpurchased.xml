@@ -15,7 +15,7 @@
     <description>VMEXT_UNPURCHASED_DESC</description>
 
     <files>
-        <filename plugin="taxreport">unpurchased.php</filename>
+        <filename plugin="unpurchased">unpurchased.php</filename>
         <filename>unpurchased.script.php</filename>
         <filename>index.html</filename>
         <folder>language</folder>
