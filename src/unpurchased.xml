@@ -7,7 +7,7 @@
     <authorUrl>http://www.gileba.be/</authorUrl>
     <copyright>Copyright (C) 2019 Gijs Lamon. All rights reserved.</copyright>
     <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3</license>
-    <version>0.1</version>
+    <version>0.1.0</version>
     <description>VMEXT_UNPURCHASED_DESC</description>
 
     <files>
@@ -25,12 +25,11 @@
         <language tag="en-GB">en-GB/en-GB.plg_vmextended_unpurchased.sys.ini</language>
     </languages>
     
-<!-- 	VM 3.x: Fields -->
+	<!-- VM 3.x: Fields -->
     <vmconfig>
     </vmconfig>
 
-
-   <!-- VM 2.0 support (params rather than fields): -->
+	<!-- VM 2.0 support (params rather than fields): -->
     <params addpath="/plugins/vmextended/unpurchased/elements" />
     <params addpath="/administrator/components/com_virtuemart/elements" >
         <param type="vmjpluginwarning" />
