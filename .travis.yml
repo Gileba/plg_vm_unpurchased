@@ -15,6 +15,7 @@ matrix:
 script:
 - phpunit --configuration travisci-phpunit.xml --no-configuration tests
 before_deploy:
+- cd ..
 - zip -r plg_vm_unpurchased.zip plg_vm_unpurchased/src -x \*.git\* *.gitattributes*
 deploy:
   provider: releases
