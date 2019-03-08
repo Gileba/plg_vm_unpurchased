@@ -6,7 +6,8 @@
     	
 	class plgVmExtendedUnpurchasedInstallerScript {
     	public function postflight ($type, $parent = null) {
-        	JPlugin::loadLanguage('plg_vmextended_unpurchased');
+        	$lang = JFactory::getLanguage();
+        	$lang->load('plg_vmextended_unpurchased');
 			$db = JFactory::getDBO();
 			$db->setQuery("SELECT `id` FROM `#__virtuemart_adminmenuentries` WHERE `view` = 'unpurchased'");
 			$exists = $db->loadResult();
