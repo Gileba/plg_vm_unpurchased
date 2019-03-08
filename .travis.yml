@@ -12,6 +12,8 @@ env:
 matrix:
   allow_failures:
   - php: nightly
+script:
+- phpunit --configuration travisci-phpunit.xml --no-configuration tests
 before_deploy:
 - zip -r plg_vm_unpurchased.zip plg_vm_unpurchased/src -x \*.git\* *.gitattributes*
 deploy:
