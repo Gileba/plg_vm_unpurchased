@@ -8,7 +8,7 @@
 		public function __construct (&$subject, $config=array()) {
 			parent::__construct($subject, $config);
 				$this->_path = JPATH_PLUGINS . DS . 'vmextended' . DS . $this->getName();
-				JPlugin::loadLanguage('plg_vmextended_' . $this->getName());
+				$this->loadLanguage('plg_vmextended_' . $this->getName());
 		}
  
 		public function onVmAdminController ($controller) {
