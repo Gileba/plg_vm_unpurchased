@@ -23,6 +23,10 @@
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.plg_vmextended_unpurchased.ini</language>
         <language tag="en-GB">en-GB/en-GB.plg_vmextended_unpurchased.sys.ini</language>
+        <language tag="nl-NL">nl-NL/nl-NL.plg_vmextended_unpurchased.ini</language>
+        <language tag="nl-NL">nl-NL/nl-NL.plg_vmextended_unpurchased.sys.ini</language>
+        <language tag="nl-BE">nl-BE/nl-BE.plg_vmextended_unpurchased.ini</language>
+        <language tag="nl-BE">nl-BE/nl-BE.plg_vmextended_unpurchased.sys.ini</language>
     </languages>
     
 	<!-- VM 3.x: Fields -->
