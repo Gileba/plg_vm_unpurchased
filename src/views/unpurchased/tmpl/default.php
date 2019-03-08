@@ -5,16 +5,7 @@
 ?>
  
 <form action="index.php" method="post" name="adminForm" id="adminForm">
- 
-    <div id="header">
-        <h2><?php echo vmText::sprintf('VMEXT_UNPURCHASED_VIEW_TITLE_REPORT'); ?></h2>
- 
-        <div id="resultscounter">
-            <?php if ($this->pagination) echo $this->pagination->getResultsCounter();?>
-        </div>
-    </div>
- 
-    <div id="editcell">
+     <div id="editcell">
       <table class="adminlist table table-striped" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
@@ -36,13 +27,20 @@
 					} 
 				?>
             </tbody>
+ <?php if ($this->pagination) { ?>
             <tfoot>
                 <tr>
                     <td colspan="10">
-                        <?php if ($this->pagination) echo $this->pagination->getListFooter(); ?>
+                        <?php echo $this->pagination->getListFooter(); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="10">
+                        <?php echo $this->pagination->getResultsCounter(); ?>
                     </td>
                 </tr>
             </tfoot>
+ <?php } ?>
         </table>
     </div>
  
