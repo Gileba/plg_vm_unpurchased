@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-if (!class_exists('VmModel')) { 
+if (!class_exists('VmModel')) {
 	require(VMPATH_ADMIN . DS . 'helpers' . DS . 'vmmodel.php');
 }
 

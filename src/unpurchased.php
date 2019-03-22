@@ -2,7 +2,7 @@
 defined('_JEXEC') or die;
 defined('VMPATH_PLUGINLIBS') or define('VMPATH_PLUGINLIBS', JPATH_VM_PLUGINS);
 
-if (!class_exists('vmExtendedPlugin')) { 
+if (!class_exists('vmExtendedPlugin')) {
 	require(VMPATH_PLUGINLIBS . DS . 'vmextendedplugin.php');
 }
 
