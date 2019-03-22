@@ -6,6 +6,10 @@ if (!class_exists('VmModel')) { require(VMPATH_ADMIN . DS . 'helpers' . DS . 'vm
 
 class VirtuemartModelUnpurchased extends VmModel
 {
+	/**
+	 * @var string $from_period        Date to start the search from
+     */
+	
 	public $from_period  = '';
 
 	private function __construct()
