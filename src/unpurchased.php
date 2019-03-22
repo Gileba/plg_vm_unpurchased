@@ -1,8 +1,9 @@
 <?php
-	defined('_JEXEC') or die;
-	defined('VMPATH_PLUGINLIBS') or define('VMPATH_PLUGINLIBS', JPATH_VM_PLUGINS);
+defined('_JEXEC') or die;
+defined('VMPATH_PLUGINLIBS') or define('VMPATH_PLUGINLIBS', JPATH_VM_PLUGINS);
 
-if (!class_exists('vmExtendedPlugin')) { require(VMPATH_PLUGINLIBS . DS . 'vmextendedplugin.php');
+if (!class_exists('vmExtendedPlugin')) { 
+	require(VMPATH_PLUGINLIBS . DS . 'vmextendedplugin.php');
 }
 
 // phpcs:disable PEAR.NamingConventions.ValidClassName

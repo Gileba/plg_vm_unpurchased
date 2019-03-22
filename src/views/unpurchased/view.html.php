@@ -1,8 +1,10 @@
 <?php
-	defined('_JEXEC') or die;
+defined('_JEXEC') or die;
+
 if (!defined('VM_VERSION') or VM_VERSION < 3) {
 	// VM2 has class VmView instead of VmViewAdmin:
-	if (!class_exists('VmView')) { require(VMPATH_ADMIN . DS . 'helpers' . DS . 'vmview.php');
+	if (!class_exists('VmView')) { 
+		require(VMPATH_ADMIN . DS . 'helpers' . DS . 'vmview.php');
 	}
 
 	class VmViewAdmin extends VmView
@@ -10,7 +12,8 @@ if (!defined('VM_VERSION') or VM_VERSION < 3) {
 	}
 	defined('VMPATH_PLUGINLIBS') or define('VMPATH_PLUGINLIBS', JPATH_VM_PLUGINS);
 } else {
-	if(!class_exists('VmViewAdmin')) { require(VMPATH_ADMIN . DS . 'helpers' . DS . 'vmviewadmin.php');
+	if(!class_exists('VmViewAdmin')) { 
+		require(VMPATH_ADMIN . DS . 'helpers' . DS . 'vmviewadmin.php');
 	}
 }
 
@@ -24,7 +27,8 @@ class VirtuemartViewUnpurchased extends VmViewAdmin
 
 	public function display($tpl = null)
 	{
-		if (!class_exists('VmHTML')) { require(VMPATH_ADMIN . DS . 'helpers' . DS . 'html.php');
+		if (!class_exists('VmHTML')) { 
+			require(VMPATH_ADMIN . DS . 'helpers' . DS . 'html.php');
 		}
 
 		vRequest::setvar('task', '');

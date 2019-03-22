@@ -1,5 +1,4 @@
 <?php
-
 defined('_JEXEC') or die;
 defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 
