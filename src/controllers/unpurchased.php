@@ -9,7 +9,7 @@ if (!class_exists('VmController')) {
 class VirtuemartControllerUnpurchased extends VmController
 {
 
-	private function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->addViewPath(JPATH_PLUGINS . DS . 'vmextended' . DS . 'unpurchased' . DS . 'views');

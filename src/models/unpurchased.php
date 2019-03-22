@@ -13,7 +13,7 @@ class VirtuemartModelUnpurchased extends VmModel
 
 	public $from_period  = '';
 
-	private function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->setMainTable('products');
