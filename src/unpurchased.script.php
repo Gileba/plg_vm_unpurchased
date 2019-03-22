@@ -1,6 +1,8 @@
 <?php
-	defined('_JEXEC') or die;
-	defined('DS') or define('DS', DIRECTORY_SEPARATOR);
+
+defined('_JEXEC') or die;
+defined('DS') or define('DS', DIRECTORY_SEPARATOR);
+
 if (!class_exists('VmConfig')) {
 	require(JPATH_ROOT . DS . 'administrator' . DS . 'components' . DS . 'com_virtuemart' . DS . 'helpers' . DS . 'config.php');
 }
@@ -24,7 +26,7 @@ class plgVmExtendedUnpurchasedInstallerScript
 
 	public function install(JAdapterInstance $adapter)
 	{
-			$db = JFactory::getDBO();
+		$db = JFactory::getDBO();
 		$db->setQuery('update #__extensions set enabled = 1 where type = "plugin" and element = "unpurchased" and folder = "vmextended"');
 		$db->query();
 		return true;
@@ -32,7 +34,7 @@ class plgVmExtendedUnpurchasedInstallerScript
 
 	public function uninstall(JAdapterInstance $adapter)
 	{
-			$db = JFactory::getDBO();
+		$db = JFactory::getDBO();
 		$q = "DELETE FROM `#__virtuemart_adminmenuentries` WHERE `view` = 'unpurchased' AND `task` = '' AND `module_id` = 2";
 		$db->setQuery($q);
 		$db->query();

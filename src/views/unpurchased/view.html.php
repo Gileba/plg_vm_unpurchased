@@ -16,13 +16,13 @@ if (!defined('VM_VERSION') or VM_VERSION < 3) {
 
 class VirtuemartViewUnpurchased extends VmViewAdmin
 {
-	function __construct()
+	private function __construct()
 	{
 		parent::__construct();
 		$this->_addPath('template', JPATH_PLUGINS . DS . 'vmextended' . DS . 'unpurchased' . DS . 'views' . DS . $this->getName() . DS . 'tmpl');
 	}
 
-	function display($tpl = null)
+	public function display($tpl = null)
 	{
 		if (!class_exists('VmHTML')) { require(VMPATH_ADMIN . DS . 'helpers' . DS . 'html.php');
 		}

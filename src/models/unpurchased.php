@@ -8,13 +8,13 @@ class VirtuemartModelUnpurchased extends VmModel
 {
 	public $from_period  = '';
 
-	function __construct()
+	private function __construct()
 	{
 		parent::__construct();
 		$this->setMainTable('products');
 	}
 
-	function correctTimeOffset(&$inputDate)
+	protected function correctTimeOffset(&$inputDate)
 	{
 		$config = JFactory::getConfig();
 		$this->siteOffset = $config->get('offset');
@@ -23,7 +23,7 @@ class VirtuemartModelUnpurchased extends VmModel
 		$inputDate = $date->format('Y-m-d H:i:s', true);
 	}
 
-	function setPeriod()
+	protected function setPeriod()
 	{
 		$this->from_period = vRequest::getVar('from_period');
 
@@ -34,7 +34,7 @@ class VirtuemartModelUnpurchased extends VmModel
 		$this->correctTimeOffset($this->from_period);
 	}
 
-	function getUnpurchasedProducts()
+	public function getUnpurchasedProducts()
 	{
 		// $this->setPeriod();
 		$this->from_period = ('2017-01-01 00:00:00');
@@ -44,7 +44,10 @@ class VirtuemartModelUnpurchased extends VmModel
 		$select[] = "`p`.`product_sku` AS `sku`";
 		$selectString = join(', ', $select) . ' FROM `#__virtuemart_products` AS `p`';
 
-		$whereString = 'WHERE `p`.`published` = true AND NOT EXISTS ( SELECT `io`.`virtuemart_product_id`, `io`.`order_item_name`, `io`.`created_on` FROM #__virtuemart_order_items AS `io` WHERE `io`.`created_on` > "' . $this->from_period . '" AND `p`.`virtuemart_product_id` = `io`.`virtuemart_product_id` )';
+		$whereString = 'WHERE `p`.`published` = true ';
+		$whereString .= ' AND NOT EXISTS ( SELECT `io`.`virtuemart_product_id`, `io`.`order_item_name`, `io`.`created_on` ';
+		$whereString .= ' FROM #__virtuemart_order_items AS `io` ';
+		$whereString .= ' WHERE `io`.`created_on` > "' . $this->from_period . '" AND `p`.`virtuemart_product_id` = `io`.`virtuemart_product_id` )';
 
 		$groupBy = 'GROUP BY `p`.`virtuemart_product_id`';
 		$orderBy = 'ORDER BY `p`.`virtuemart_product_id` ASC';
