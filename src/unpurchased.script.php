@@ -7,7 +7,9 @@ if (!class_exists('VmConfig')) {
 	require(JPATH_ROOT . DS . 'administrator' . DS . 'components' . DS . 'com_virtuemart' . DS . 'helpers' . DS . 'config.php');
 }
 
+// phpcs:disable PEAR.NamingConventions.ValidClassName
 class plgVmExtendedUnpurchasedInstallerScript
+// phpcs:enable
 {
 	public function postflight($type, $parent = null)
 	{
@@ -17,9 +19,10 @@ class plgVmExtendedUnpurchasedInstallerScript
 		$db->setQuery("SELECT `id` FROM `#__virtuemart_adminmenuentries` WHERE `view` = 'unpurchased'");
 		$exists = $db->loadResult();
 		if (!$exists) {
-				$q = "INSERT INTO `#__virtuemart_adminmenuentries` (`module_id`, `name`, `link`, `depends`, `icon_class`, `ordering`, `published`, `tooltip`, `view`, `task`) VALUES
-(2, '" . vmText::_('COM_VIRTUEMART_UNPURCHASED') . "', '', '', 'vmicon vmicon-16-report', 25, 1, '', 'unpurchased', '')";
-				$db->setQuery($q);
+			$q = "INSERT INTO `#__virtuemart_adminmenuentries` "
+			$q .= "(`module_id`, `name`, `link`, `depends`, `icon_class`, `ordering`, `published`, `tooltip`, `view`, `task`) "
+			$q .= " VALUES (2, '" . vmText::_('COM_VIRTUEMART_UNPURCHASED') . "', '', '', 'vmicon vmicon-16-report', 25, 1, '', 'unpurchased', '')";
+			$db->setQuery($q);
 			$db->query();
 		}
 	}

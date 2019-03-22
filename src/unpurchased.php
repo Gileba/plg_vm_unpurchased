@@ -5,7 +5,9 @@
 if (!class_exists('vmExtendedPlugin')) { require(VMPATH_PLUGINLIBS . DS . 'vmextendedplugin.php');
 }
 
+// phpcs:disable PEAR.NamingConventions.ValidClassName
 class plgVmExtendedUnpurchased extends vmExtendedPlugin
+// phpcs:enable
 {
 	public function __construct(&$subject, $config=array())
 	{

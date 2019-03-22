@@ -19,7 +19,12 @@
 				foreach ($this->report as $r) {
 					?>
 				<tr class="row<?php echo $i;?>">
-					<td align="center"><a href="/administrator/index.php?option=com_virtuemart&view=product&task=edit&virtuemart_product_id=<?php echo $r['product_id']; ?>"><?php echo $r['product_id']; ?></a></td>
+					<td align="center">
+						<a href="/administrator/index.php?
+						option=com_virtuemart&view=product&task=edit&virtuemart_product_id=<?php echo $r['product_id']; ?>">
+								<?php echo $r['product_id']; ?>
+						</a>
+					</td>
 					<td align="center"><?php echo $r['sku']; ?></td>
 				</tr>
 					<?php
@@ -28,7 +33,10 @@
 				?>
 				<tr class="row<?php echo $i;?>">
 					<td align="center">
-							<a href="/administrator/index.php?option=com_virtuemart&view=product&task=edit&virtuemart_product_id=<?php echo $r['product_id']; ?>"><?php echo $r['product_id']; ?></a>
+						<a href="/administrator/index.php?
+						option=com_virtuemart&view=product&task=edit&virtuemart_product_id=<?php echo $r['product_id']; ?>">
+							<?php echo $r['product_id']; ?>
+						</a>
 					</td>
 					<td align="center"><?php echo $r['sku']; ?></td>
 				</tr>
