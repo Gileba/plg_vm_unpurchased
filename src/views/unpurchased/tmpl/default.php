@@ -9,8 +9,8 @@
 		<table class="adminlist table table-striped" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
-					<th><?php echo $this->sort('`product_id`', 'VMEXT_UNPURCHASED_PRODUCTID') ; ?></th>
-					<th><?php echo $this->sort('`sku`', 'VMEXT_UNPURCHASED_SKU') ; ?></th>
+					<th><?php echo $this->sort('`product_id`', 'VMEXT_UNPURCHASED_PRODUCTID'); ?></th>
+					<th><?php echo $this->sort('`sku`', 'VMEXT_UNPURCHASED_SKU'); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,8 +33,8 @@
 					<td align="center"><?php echo $r['sku']; ?></td>
 				</tr>
 				<?php
-						$i = 1-$i;
-					} 
+						$i = 1 - $i;
+					}
 				?>
 			</tbody>
 			<?php if ($this->pagination) { ?>
@@ -46,9 +46,9 @@
 		</table>
 	</div>
  
-	<?php 
-		echo $this->addStandardHiddenToForm(); 
+	<?php
+		echo $this->addStandardHiddenToForm();
 	?>
 </form>
  
-<?php AdminUIHelper::endAdminArea(); ?>
+<?php AdminUIHelper::endAdminArea();
