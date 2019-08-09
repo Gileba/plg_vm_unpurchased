@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <extension version="2.5" type="plugin" group="vmextended" method="upgrade">
     <name>VMEXT_UNPURCHASED</name>
-    <creationDate>2019-03-22</creationDate>
+    <creationDate>2019-08-08</creationDate>
     <author>Gileba</author>
     <authorEmail>info@gileba.be</authorEmail>
     <authorUrl>http://www.gileba.be/</authorUrl>
     <copyright>Copyright (C) 2019 Gijs Lamon. All rights reserved.</copyright>
     <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3</license>
-    <version>0.5.1</version>
+    <version>0.5.2</version>
     <description>VMEXT_UNPURCHASED_DESC</description>
 
     <files>
@@ -43,6 +43,6 @@
 		<server
 			type="extension"
 			priority="1"
-			name="Gileba Update Server">http://www.gileba.be/updates/plg_vm_unpurchased_updates.xml</server>
+			name="Gileba Update Server">http://updates.gileba.be/plg_vm_unpurchased_updates.xml</server>
 	</updateservers>
 </extension>

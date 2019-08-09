@@ -27,3 +27,5 @@ deploy:
   api_key: $GITHUB_TOKEN
 after_deploy:
   - curl -T plg_vm_unpurchased/plg_vm_unpurchased_updates.xml -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
+  - curl -T plg_vm_unpurchased/plg_vm_unpurchased_upadtes.xml -u $TMP_FTP_USER:$TMP_FTP_PASSWORD $TMP_FTP_SERVER
+  - curl -T plg_vm_unpurchased.zip -u $TMP_FTP_USER:$TMP_FTP_PASSWORD $TMP_FTP_SERVER
