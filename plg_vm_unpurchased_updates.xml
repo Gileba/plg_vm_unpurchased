@@ -6,10 +6,10 @@
 		<element>unpurchased</element>
 		<type>plugin</type>
 		<folder>vmextended</folder>
-		<version>0.5.2</version>
-		<infourl title="VirtueMart Unpurchased (Plugin)">https://github.com/Gileba/plg_vm_unpurchased/releases/tag/0.5.2</infourl>
+		<version>0.5.3</version>
+		<infourl title="VirtueMart Unpurchased (Plugin)">https://github.com/Gileba/plg_vm_unpurchased/releases/tag/0.5.3</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/Gileba/plg_vm_unpurchased/releases/download/0.5.2/plg_vm_unpurchased.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/Gileba/plg_vm_unpurchased/releases/download/0.5.3/plg_vm_unpurchased.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>stable</tag>
@@ -23,8 +23,8 @@
 		<element>unpurchased</element>
 		<type>plugin</type>
 		<folder>vmextended</folder>
-		<version>0.5.2</version>
-		<infourl title="VirtueMart Unpurchased (Plugin)">http://github.com/Gileba/plg_vm_unpurchased/releases/tag/0.5.2</infourl>
+		<version>0.5.3</version>
+		<infourl title="VirtueMart Unpurchased (Plugin)">http://github.com/Gileba/plg_vm_unpurchased/releases/tag/0.5.3</infourl>
 		<downloads>
 			<downloadurl type="full" format="zip">http://updates.gileba.be/plg_vm_unpurchased.zip</downloadurl>
 		</downloads>
